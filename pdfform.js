@@ -337,7 +337,7 @@ function pdf_decode_str(str) {
 function acroform_match_spec(n, fields) {
 	var t = pdf_decode_str(n.map.T);
 	if (t in fields) {
-		return fields[t][0];
+		return fields[t] || "";
 	} else {
 		var m = /^(.*)\[([0-9]+)\]$/.exec(t);
 		if (m && (m[1] in fields)) {
